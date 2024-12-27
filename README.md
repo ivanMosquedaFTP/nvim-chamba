@@ -8,4 +8,6 @@ Special config for java, optimized for spring boot
 * emmet-language-server
 * prettier
 * vtsls
-all Java related LSP's are installed through nvim-java
+* rust-analyzer
+
+### all Java related LSP's are installed through nvim-java
