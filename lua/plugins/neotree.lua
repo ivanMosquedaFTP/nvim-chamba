@@ -216,8 +216,8 @@ return {
           last_indent_marker = "└",
           highlight = "NeoTreeIndentMarker",
           -- expander config, needed for nesting files
-          with_expanders = nil, -- if nil and file nesting is enabled, will enable expanders
-          expander_collapsed = "",
+          with_expanders = true, -- if nil and file nesting is enabled, will enable expanders
+          expander_collapsed = "",
           expander_expanded = "",
           expander_highlight = "NeoTreeExpander",
         },
@@ -366,9 +366,7 @@ return {
             ["H"] = "toggle_hidden",
             ["/"] = "fuzzy_finder",
             ["D"] = "fuzzy_finder_directory",
-            --["/"] = "filter_as_you_type", -- this was the default until v1.28
             ["#"] = "fuzzy_sorter", -- fuzzy sorting using the fzy algorithm
-            -- ["D"] = "fuzzy_sorter_directory",
             ["f"] = "filter_on_submit",
             ["<C-x>"] = "clear_filter",
             ["<bs>"] = "navigate_up",
@@ -397,7 +395,7 @@ return {
         -- "never"  means directory scans are never async.
         scan_mode = "shallow", -- "shallow": Don't scan into directories to detect possible empty directory a priori
         -- "deep": Scan into directories to detect empty or grouped empty directories a priori.
-        bind_to_cwd = true, -- true creates a 2-way binding between vim's cwd and neo-tree's root
+        bind_to_cwd = false, -- true creates a 2-way binding between vim's cwd and neo-tree's root
         cwd_target = {
           sidebar = "tab", -- sidebar is when position = left or right
           current = "window", -- current is when position = current
@@ -477,7 +475,7 @@ return {
         group_empty_dirs = false, -- when true, empty folders will be grouped together
         search_limit = 50, -- max number of search results when using filters
         follow_current_file = {
-          enabled = false, -- This will find and focus the file in the active buffer every time
+          enabled = true, -- This will find and focus the file in the active buffer every time
           --               -- the current file is changed while the tree is open.
           leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
         },
@@ -486,7 +484,7 @@ return {
         -- "open_current",-- netrw disabled, opening a directory opens within the
         -- window like netrw would, regardless of window.position
         -- "disabled",    -- netrw left alone, neo-tree does not handle opening dirs
-        use_libuv_file_watcher = false, -- This will use the OS level file watchers to detect changes
+        use_libuv_file_watcher = true, -- This will use the OS level file watchers to detect changes
         -- instead of relying on nvim autocmd events.
       },
       buffers = {
