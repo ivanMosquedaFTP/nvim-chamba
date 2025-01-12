@@ -19,3 +19,6 @@ vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end, { desc = "
 vim.keymap.set("n", "<leader>h", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Harpoon list" })
 vim.keymap.set("n", "<leader>p", function() harpoon:list():prev() end, { desc = "Harpoon prev" })
 vim.keymap.set("n", "<leader>n", function() harpoon:list():next() end, { desc = "Harpoon next" })
+
+-- deleted useless fucking stupid ass keymap
+vim.keymap.del("n", "<leader><leader>")
