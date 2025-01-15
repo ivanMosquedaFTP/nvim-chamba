@@ -5,9 +5,6 @@ return {
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
   },
-  keys = {
-    { "<leader>e", ":Neotree reveal<CR>:set relativenumber<CR>", desc = "NeoTree", silent = true },
-  },
   config = function()
     require("neo-tree").setup({
       sources = {
